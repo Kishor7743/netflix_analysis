@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS netflix;
+
 CREATE TABLE netflix
 (
 	show_id	VARCHAR(5),
@@ -17,14 +18,16 @@ CREATE TABLE netflix
 
 SELECT * FROM netflix;
 
--- 1. Count the number of Movies vs TV Shows
+-- 1. Count the number of Movies vs TV Shows:
+
 SELECT 
 	type,
 	COUNT(*)
 FROM netflix
 GROUP BY 1;
 
--- 2. Find the most common rating for movies and TV shows
+-- 2. Find the most common rating for movies and TV shows:
+
 SELECT type, rating
 from (SELECT 
    type,
